@@ -103,7 +103,7 @@ const SliderWrapper = ({ slides }) => {
             color='white'
             fontSize='lg'
             fontWeight='semibold'
-            letterSpacing='1px'>
+            letterSpacing='1px' pr='6'>
             Welcome to the future of residential real estate.
           </Text>
         </Box>
