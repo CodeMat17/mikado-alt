@@ -3,6 +3,7 @@ import Image from "next/image";
 import ColorModeToggle from "./ColorModeToggle";
 import { MobileMenu } from "../components/menuBtn/MobileMenu";
 import LogoComponent from "./LogoComponent";
+import { DesktopMenu } from "./menuBtn/DesktopMenu";
 
 const NavHeader = () => {
    const bg = useColorModeValue("gray.200", "gray.800");
@@ -29,6 +30,7 @@ const NavHeader = () => {
         <HStack spacing='4'>
           <ColorModeToggle />
           <MobileMenu />
+          <DesktopMenu />
         </HStack>
       </HStack>
     </Box>

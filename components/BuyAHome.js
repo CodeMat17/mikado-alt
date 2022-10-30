@@ -78,7 +78,7 @@ const BuyAHome = () => {
       as={motion.div}
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: false, amount: 0.56 }}
+      viewport={{ once: false}}
       transition={{ staggerChildren: 0.6 }}
       py='20'
       px='6'

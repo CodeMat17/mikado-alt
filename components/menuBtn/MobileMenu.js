@@ -24,7 +24,7 @@ export const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box>
+    <Box display={{xl: 'none'}}>
       <IconButton
         onClick={onOpen}
         color='#00afee'
