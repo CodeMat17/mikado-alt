@@ -12,7 +12,7 @@ import {
 import NextLink from "next/link";
 import CallBtn from "./contactBtn/CallBtn";
 import EmailBtn from "./contactBtn/EmailBtn";
-import FacebookBtn from "./contactBtn/facebookBtn";
+import FacebookBtn from "./contactBtn/FacebookBtn";
 import InstagramBtn from "./contactBtn/InstagramBtn";
 import TwitterBtn from "./contactBtn/TwitterBtn";
 import WhatsAppBtn from "./contactBtn/WhatsAppBtn";
