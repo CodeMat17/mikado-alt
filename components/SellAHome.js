@@ -12,27 +12,27 @@ import Image from "next/image";
 import Link from "next/link";
 import PreviewCard from "./PreviewCard";
 
-const SellAHome = () => {
+const SellAHome = ({ title, label }) => {
   const bg = useColorModeValue("", "gray.700");
 
-   const cards = [
-     {
-       id: 1,
-       image: "/preview/aco-lugbe-2.webp",
-     },
-     {
-       id: 2,
-       image: "/preview/aco-lugbe-4.webp",
-     },
-     {
-       id: 3,
-       image: "/preview/aco-lugbe-6.webp",
-     },
-     {
-       id: 4,
-       image: "/preview/aco-lugbe-8.webp",
-     },
-   ];
+  const cards = [
+    {
+      id: 1,
+      image: "/preview/aco-lugbe-2.webp",
+    },
+    {
+      id: 2,
+      image: "/preview/aco-lugbe-4.webp",
+    },
+    {
+      id: 3,
+      image: "/preview/aco-lugbe-6.webp",
+    },
+    {
+      id: 4,
+      image: "/preview/aco-lugbe-8.webp",
+    },
+  ];
 
   const animSvg = {
     hidden: { x: -100, opacity: 0 },
@@ -63,15 +63,7 @@ const SellAHome = () => {
       transition: { type: "spring", bounce: "0.4", duration: 3, delay: 0.4 },
     },
   };
-  const animSmallText = {
-    hidden: { y: 100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      // rotate: [0, 10, 0],
-      transition: { type: "spring", bounce: "0.4", duration: 3, delay: 0.6 },
-    },
-  };
+  
 
   return (
     <Flex
@@ -102,7 +94,7 @@ const SellAHome = () => {
         </VStack>
         <Box as={motion.div} px='4'>
           <Heading as={motion.div} variants={animBigText} textAlign='center'>
-            WANT TO SELL A HOME?
+            {title}
           </Heading>
           <Text
             as={motion.div}
@@ -111,7 +103,7 @@ const SellAHome = () => {
             letterSpacing='1px'
             fontWeight='semibold'
             fontSize='lg'>
-            WAIT NO MORE!
+            {label}
           </Text>
           {/* <Text as={motion.div} variants={animSmallText} textAlign='center'>
           Checkout our listing

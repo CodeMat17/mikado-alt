@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PreviewCard from "./PreviewCard";
 
-const HouseListing = () => {
+const HouseListing = ({title, label}) => {
   const bg = useColorModeValue("", "gray.700");
 
    const cards = [
@@ -102,7 +102,8 @@ const HouseListing = () => {
         </VStack>
         <Box as={motion.div} px='4'>
           <Heading as={motion.div} variants={animBigText} textAlign='center'>
-            HOME LISTING?
+         
+            {title}
           </Heading>
           <Text
             as={motion.div}
@@ -111,7 +112,7 @@ const HouseListing = () => {
             letterSpacing='1px'
             fontWeight='semibold'
             fontSize='lg'>
-            YOU ARE AT THE RIGHT PLACE.
+      {label}
           </Text>
           {/* <Text as={motion.div} variants={animSmallText} textAlign='center'>
           Checkout our listing

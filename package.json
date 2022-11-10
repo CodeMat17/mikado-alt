@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@fontsource/open-sans": "^4.5.13",
     "@fontsource/raleway": "^4.5.11",
+    "contentful": "^9.2.9",
     "framer-motion": "^7.6.1",
     "next": "12.3.1",
     "next-images": "^1.8.4",

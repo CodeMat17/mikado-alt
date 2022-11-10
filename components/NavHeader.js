@@ -6,7 +6,7 @@ import LogoComponent from "./LogoComponent";
 import { DesktopMenu } from "./menuBtn/DesktopMenu";
 
 const NavHeader = () => {
-   const bg = useColorModeValue("gray.200", "gray.800");
+   const bg = useColorModeValue("white", "gray.800");
 
   return (
     <Box
@@ -15,9 +15,10 @@ const NavHeader = () => {
       px='4'
       pos='sticky'
       top='0'
-      zIndex='60'
+      zIndex='60' shadow='md'
       // color='#00afee'
-      bg={bg}>
+      bg={bg}
+    >
       <HStack justify='space-between' align='center'>
         <HStack>
           <LogoComponent />

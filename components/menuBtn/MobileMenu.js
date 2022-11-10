@@ -24,8 +24,9 @@ export const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box display={{xl: 'none'}}>
+    <Box display={{ xl: "none" }}>
       <IconButton
+        // variant='ghost'
         onClick={onOpen}
         color='#00afee'
         icon={<HiMenuAlt3 size={32} />}
@@ -103,16 +104,20 @@ export const MobileMenu = () => {
               </a>
             </Link>
 
-            <Button
-              onClick={onClose}
-              leftIcon={<CiBoxList size={23} />}
-              justifyContent='start'
-              size='lg'
-              w='100%'
-              variant='ghost'
-              letterSpacing='1px'>
-              HOUSE LISTING
-            </Button>
+            <Link href='/house-listing'>
+              <a>
+                <Button
+                  onClick={onClose}
+                  leftIcon={<CiBoxList size={23} />}
+                  justifyContent='start'
+                  size='lg'
+                  w='100%'
+                  variant='ghost'
+                  letterSpacing='1px'>
+                  HOUSE LISTING
+                </Button>
+              </a>
+            </Link>
 
             <Link href='/our-team'>
               <a>

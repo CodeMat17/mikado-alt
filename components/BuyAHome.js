@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PreviewCard from "./PreviewCard";
 
-const BuyAHome = () => {
+const BuyAHome = ({title, label}) => {
   const bg = useColorModeValue("", "gray.700");
 
   const cards = [
@@ -63,15 +63,7 @@ const BuyAHome = () => {
       transition: { type: "spring", bounce: "0.4", duration: 3, delay: 0.4 },
     },
   };
-  const animSmallText = {
-    hidden: { y: 100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      // rotate: [0, 10, 0],
-      transition: { type: "spring", bounce: "0.4", duration: 3, delay: 0.6 },
-    },
-  };
+ 
 
   return (
     <Flex
@@ -102,7 +94,7 @@ const BuyAHome = () => {
         </VStack>
         <Box as={motion.div} px='4'>
           <Heading as={motion.div} variants={animBigText} textAlign='center'>
-            WANT TO BUY A HOME?
+           {title}
           </Heading>
           <Text
             as={motion.div}
@@ -111,19 +103,16 @@ const BuyAHome = () => {
             letterSpacing='1px'
             fontWeight='semibold'
             fontSize='lg'>
-            DON&apos;T GET LEFT BEHIND
+         {label}
           </Text>
-          {/* <Text as={motion.div} variants={animSmallText} textAlign='center'>
-          Checkout our listing
-        </Text> */}
         </Box>
       </Box>
 
       <Box>
         <Flex
-          bg={bg}
+          // bg={bg}
           px='6'
-          py='6'
+          py='8'
           mt={[0, 0, 0, 12]}
           maxW={["320px", "500px", "600px"]}
           overflowX='scroll'

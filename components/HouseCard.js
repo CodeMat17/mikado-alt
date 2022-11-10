@@ -1,33 +1,54 @@
-import { AspectRatio, Box, Tag, Text } from "@chakra-ui/react";
+import { AspectRatio, Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const HouseCard = ({ url, location, published_at }) => {
-  console.log(url);
+const HouseCard = ({ id, name, slug, location, description, coverimage }) => {
+ const options = {
+   renderText: (text) => {
+     return text.split("\n").reduce((children, textSegment, index) => {
+       return [...children, index > 0 && <br key={index} />, textSegment];
+     }, []);
+   },
+ };
+
 
   return (
-    <Box pos='relative' rounded='lg' overflow='hidden' shadow='md'>
-      <AspectRatio maxW={["100%", "650px"]} ratio={16 / 9}>
-        <Image alt='house' priority layout='fill' objectFit='cover' src={url} />
-      </AspectRatio>
-  
-        <Text
-          pos='absolute' left='2' bottom='2'
-          fontWeight='semibold' color='white'
-          // fontSize=''
-          textShadow='0 0 20px black'>
-          {location}
-        </Text>
-        <Text
-          pos='absolute'
-          right='2'
-          top='2'
-          color='tomato'
-          fontWeight='semibold'
-          fontSize='sm'
-          textShadow='0 0 20px black'>
-          {published_at}
-        </Text>
-   
+    <Box maxW={["100%", "100%", "xl"]}>
+      <Link href={`buy-a-home/${slug}`}>
+        <a>
+          <Flex
+            mb='12'
+            shadow='lg'
+            rounded='lg'
+            // mx={['auto']}
+            // key={house.id}
+            flexDir={["column", "row", "row"]}>
+            <Box pos='relative' w='100%' rounded='md' overflow='hidden'>
+              <AspectRatio ratio={16 / 9}>
+                <Image
+                  src={"https:" + coverimage}
+                  alt='house'
+                  priority
+                  layout='fill'
+                  objectFit='contain'
+                />
+              </AspectRatio>
+            </Box>
+            <Box pb={[2, 2, 4]} pt={[1]} px={[2, 2, 4]}>
+              <Text fontSize='lg' fontWeight='semibold'>
+                {name}
+              </Text>
+              <Text fontSize='sm' fontWeight='semibold'>
+                {location}
+              </Text>
+              <Box fontSize='sm' mt='2' noOfLines={[2, 2, 3, 4]} maxW='lg'>
+                {documentToReactComponents(description, options)}
+              </Box>
+            </Box>
+          </Flex>
+        </a>
+      </Link>{" "}
     </Box>
   );
 };

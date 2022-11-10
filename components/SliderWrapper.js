@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { BiRadioCircleMarked } from "react-icons/bi";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const SliderWrapper = ({ slides }) => {
+const SliderWrapper = ({ slides, title, label }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const previousSlide = () => {
@@ -68,7 +68,7 @@ const SliderWrapper = ({ slides }) => {
   return (
     <Box py=''>
       <Box pos='relative'>
-        <AspectRatio pos='relative' w={[ '100%']} maxH={['70vh']} ratio={16 / 9}>
+        <AspectRatio pos='relative' w={["100%"]} maxH={["70vh"]} ratio={16 / 9}>
           <Image
             src={`${slides[currentIndex].url}`}
             alt='sliders'
@@ -82,8 +82,8 @@ const SliderWrapper = ({ slides }) => {
           as={motion.div}
           initial='hidden'
           whileInView='visible'
-          viewport={{once: false}}
-          transition={{staggerChildren: 0.6}}
+          viewport={{ once: false }}
+          transition={{ staggerChildren: 0.6 }}
           pos='absolute'
           bottom={[6, 8, 12]}
           left={[2, 4, 6]}>
@@ -93,7 +93,7 @@ const SliderWrapper = ({ slides }) => {
             size={["xl", "2xl", "3xl"]}
             textShadow='0 0 20px black'
             color='#00afee'>
-            MIKADO SHELTERS
+            {title}
           </Heading>
           <Text
             as={motion.div}
@@ -103,8 +103,9 @@ const SliderWrapper = ({ slides }) => {
             color='white'
             fontSize='lg'
             fontWeight='semibold'
-            letterSpacing='1px' pr='6'>
-            Welcome to the future of residential real estate.
+            letterSpacing='1px'
+            pr='6'>
+            {label}
           </Text>
         </Box>
       </Box>

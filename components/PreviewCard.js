@@ -6,9 +6,9 @@ const PreviewCard = ({ image }) => {
   return (
     <Box
       as={motion.div}
-      whileHover={{ scale: 1.3, transition: { duration: 0.2 } }}
+      // whileHover={{ scale: 1.3, transition: { duration: 0.2 } }}
       pos='relative'
-      w='170px'
+      w='300px'
       mx='4'
       //   h='250px'
       shadow='md'

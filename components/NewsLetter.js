@@ -11,7 +11,7 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const NewsLetter = () => {
+const NewsLetter = ({title, label, desc}) => {
   const color = useColorModeValue("white", "");
 
   const handleSubscribe = () => {};
@@ -79,10 +79,10 @@ const NewsLetter = () => {
           letterSpacing='1px'
           fontWeight='semibold'
           fontSize='lg'>
-          DON&apos;T MISS ANY OF OUR NEW LISTING
+  {label}
         </Text>
         <Heading as={motion.div} variants={animBigText} textAlign='center'>
-          SUBSCRIBE TO OUR NEWS LETTER
+        {title}
         </Heading>
         <Text
           as={motion.div}
@@ -90,9 +90,7 @@ const NewsLetter = () => {
           textAlign='center'
           maxW='md'
           mx='auto'>
-          Get notified on our quality offers on different categories of
-          properties. If you subscribe, you will receive our emails only when
-          there&apos;s something new, no spam.
+       {desc}
         </Text>
       </VStack>
 

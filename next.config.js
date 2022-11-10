@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["media.istockphoto.com"],
+    domains: ["media.istockphoto.com", 'images.ctfassets.net'],
   },
 };
 

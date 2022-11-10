@@ -5,7 +5,8 @@ const WhatsAppBtn = () => {
   return (
     <IconButton
       as='a'
-      href='https://wa.me/+234837024572'
+      href='https://wa.me/+2348037024572'
+      target='_blank'
       color='green'
       size='lg'
       isRound
