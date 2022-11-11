@@ -58,7 +58,7 @@ const Details = ({ estate }) => {
         pt='12'
         align='center'
         justify='space-between'
-        maxW='3xl'
+        maxW='6xl'
         mx='auto'>
         {images && (
           <Text color='blue.500' fontSize='sm'>
