@@ -8,8 +8,8 @@ import SliderWrapper from "../components/SliderWrapper";
 import { client } from "../datalayer/contentfulClient";
 
 
-export default function Home({ data, call }) {
-console.log('call -', call)
+export default function Home({ data }) {
+
 
   const slides = [
     {
@@ -82,14 +82,9 @@ export const getStaticProps = async () => {
     content_type: "homePage",
   });
 
-   const call = await client.getEntries({
-     content_type: "callnumber",
-   });
-
   return {
     props: {
       data: data.items,
-      call: call.items
     },
   };
 };
