@@ -7,7 +7,10 @@ import NewsLetter from "../components/NewsLetter";
 import SliderWrapper from "../components/SliderWrapper";
 import { client } from "../datalayer/contentfulClient";
 
-export default function Home({ data }) {
+
+export default function Home({ data, call }) {
+console.log('call -', call)
+
   const slides = [
     {
       url: "/sliders/slider1.webp",
@@ -68,6 +71,7 @@ export default function Home({ data }) {
               />
             </Box>
           ))}
+      
       </main>
     </div>
   );
@@ -78,9 +82,14 @@ export const getStaticProps = async () => {
     content_type: "homePage",
   });
 
+   const call = await client.getEntries({
+     content_type: "callnumber",
+   });
+
   return {
     props: {
       data: data.items,
+      call: call.items
     },
   };
 };

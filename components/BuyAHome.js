@@ -1,20 +1,10 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Text,
-  useColorModeValue,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import PreviewCard from "./PreviewCard";
 
-const BuyAHome = ({title, label}) => {
-  const bg = useColorModeValue("", "gray.700");
-
+const BuyAHome = ({ title, label }) => {
   const cards = [
     {
       id: 1,
@@ -63,14 +53,13 @@ const BuyAHome = ({title, label}) => {
       transition: { type: "spring", bounce: "0.4", duration: 3, delay: 0.4 },
     },
   };
- 
 
   return (
     <Flex
       as={motion.div}
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: false}}
+      viewport={{ once: false }}
       transition={{ staggerChildren: 0.6 }}
       py='20'
       px='6'
@@ -94,7 +83,7 @@ const BuyAHome = ({title, label}) => {
         </VStack>
         <Box as={motion.div} px='4'>
           <Heading as={motion.div} variants={animBigText} textAlign='center'>
-           {title}
+            {title}
           </Heading>
           <Text
             as={motion.div}
@@ -103,7 +92,7 @@ const BuyAHome = ({title, label}) => {
             letterSpacing='1px'
             fontWeight='semibold'
             fontSize='lg'>
-         {label}
+            {label}
           </Text>
         </Box>
       </Box>

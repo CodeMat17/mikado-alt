@@ -1,5 +1,4 @@
 import { Box, HStack, Text, useColorModeValue, VStack } from "@chakra-ui/react";
-import Image from "next/image";
 import ColorModeToggle from "./ColorModeToggle";
 import { MobileMenu } from "../components/menuBtn/MobileMenu";
 import LogoComponent from "./LogoComponent";

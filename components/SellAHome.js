@@ -128,11 +128,11 @@ const SellAHome = ({ title, label }) => {
         </Flex>
         <VStack mt='8'>
           <Link href='/sell-a-home'>
-            <a>
+         
               <Button shadow='lg' size='lg' px='6' py='7'>
                 CHECK OUR LIST
               </Button>
-            </a>
+         
           </Link>
         </VStack>
       </Box>

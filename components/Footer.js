@@ -10,6 +10,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useEffect, useState } from "react";
+import { client } from "../datalayer/contentfulClient";
 import CallBtn from "./contactBtn/CallBtn";
 import EmailBtn from "./contactBtn/EmailBtn";
 import FacebookBtn from "./contactBtn/FacebookBtn";
@@ -45,6 +47,7 @@ const Footer = () => {
             </Text>
             <HStack spacing='4'>
               <FacebookBtn />
+
               <InstagramBtn />
               <TwitterBtn />
             </HStack>

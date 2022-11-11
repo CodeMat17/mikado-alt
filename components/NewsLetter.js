@@ -63,7 +63,7 @@ const NewsLetter = ({title, label, desc}) => {
         whileInView='visible'
         viewport={{ once: false, amount: 0.5 }}
         transition={{ staggerChildren: 0.6 }}>
-        <Box as={motion.div} variants={animSvg} pos='relative' w='64' h='40'>
+        <Box as={motion.div} variants={animSvg} pos='relative' w='64' h='52'>
           <Image
             alt='news letter svg'
             src='/svg/news-letter.svg'

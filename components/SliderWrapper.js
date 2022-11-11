@@ -66,8 +66,8 @@ const SliderWrapper = ({ slides, title, label }) => {
   };
 
   return (
-    <Box py=''>
-      <Box pos='relative'>
+    <Box>
+      <Box pos='relative' w={["100%"]}>
         <AspectRatio pos='relative' w={["100%"]} maxH={["70vh"]} ratio={16 / 9}>
           <Image
             src={`${slides[currentIndex].url}`}

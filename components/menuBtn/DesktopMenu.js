@@ -12,38 +12,43 @@ export const DesktopMenu = () => {
 
       <Link href='/who-we-are'>
         <a>
-          <Button variant='ghost'>WHO WE ARE</Button>
+                  <Button variant='ghost'>WHO WE ARE</Button>
+
         </a>
       </Link>
 
       <Link href='/buy-a-home'>
         <a>
-          <Button variant='ghost'>BUY A HOME</Button>
+                  <Button variant='ghost'>BUY A HOME</Button>
+
         </a>
       </Link>
 
       <Link href='/sell-a-home'>
         <a>
-          <Button variant='ghost'>SELL A HOME</Button>
+                  <Button variant='ghost'>SELL A HOME</Button>
+
         </a>
+        
       </Link>
 
       <Link href='/house-listing'>
         <a>
-          <Button variant='ghost'>HOUSE LISTING</Button>
+                  <Button variant='ghost'>HOUSE LISTING</Button>
+
         </a>
       </Link>
 
       <Link href='/our-team'>
         <a>
-          <Button variant='ghost'>OUR TEAM</Button>
-        </a>
+        
+          <Button variant='ghost'>OUR TEAM</Button></a>
       </Link>
 
       <Link href='/contact-us'>
         <a>
-          <Button variant='ghost'>CONTACT US</Button>
-        </a>
+        <Button variant='ghost'>CONTACT US</Button>
+      </a>
       </Link>
     </Box>
   );
