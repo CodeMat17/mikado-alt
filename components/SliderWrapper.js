@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { BiRadioCircleMarked } from "react-icons/bi";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -28,17 +28,17 @@ const SliderWrapper = ({ slides, title, label }) => {
     setCurrentIndex(newIndex);
   };
 
-  const currentSlide = (slideIndex) => {
+  const currentSlide = useCallback((slideIndex) => {
     setCurrentIndex(slideIndex);
-  };
+  }, [slideIndex]) 
 
   const autoScroll = true;
   let intervalTime = 5000;
   let slideInterval;
 
-  const auto = () => {
+  const auto = useCallback(() => {
     slideInterval = setInterval(nextSlide, intervalTime);
-  };
+  }, [nextSlide, intervalTime]) 
 
   useEffect(() => {
     if (autoScroll) {

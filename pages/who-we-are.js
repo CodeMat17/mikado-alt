@@ -11,7 +11,7 @@ const WhoWeAre = ({ data }) => {
       from: { number: 0 },
       number: n,
       delay: 800,
-      config: { mass: 1, tension: 20, friction: 25 },
+      config: { mass: 1, tension: 20, friction: 20 },
     });
     return (
       <animated.div>
