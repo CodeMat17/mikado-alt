@@ -3,7 +3,7 @@ import { BsTwitter } from "react-icons/bs";
 const TwitterBtn = ({tw}) => {
   return (
     <>
-    {tw && tw.map((item, index) => (
+    {tw.map((item, index) => (
        <IconButton key={index}
       as='a'
       href={item.url}
