@@ -34,27 +34,27 @@ const Footer = () => {
 
   useEffect(() => {
     getCallNo().then((res) => setCallNo(res));
-  }, []);
+  }, [getCallNo]);
 
   useEffect(() => {
     getWhatsAppNo().then((res) => setWhatsapp(res));
-  }, []);
+  }, [getWhatsAppNo]);
 
   useEffect(() => {
     getEmail().then((res) => setEmail(res));
-  }, []);
+  }, [getEmail]);
 
   useEffect(() => {
     getFb().then((res) => setFb(res));
-  }, []);
+  }, [getFb]);
 
    useEffect(() => {
      getIg().then((res) => setIg(res));
-   }, []);
+   }, [getIg]);
   
    useEffect(() => {
      getTw().then((res) => setTw(res));
-   }, []);
+   }, [getTw]);
 
   return (
     <Box px='6' py='12' bg='gray.900' color={color}>

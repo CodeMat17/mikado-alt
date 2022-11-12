@@ -45,7 +45,7 @@ const SliderWrapper = ({ slides, title, label }) => {
       auto();
     }
     return () => clearInterval(slideInterval);
-  }, [currentSlide, autoScroll]);
+  }, [currentSlide, autoScroll, slideInterval, auto]);
 
   const big = {
     hidden: { y: -100, opacity: 0 },
