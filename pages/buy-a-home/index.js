@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
@@ -23,6 +23,7 @@ export const getStaticProps = async () => {
       "fields.description",
       "fields.coverImage",
     ],
+    order: 'fields.name',
   });
 
   return {
@@ -75,7 +76,7 @@ const BuyAHome = ({ pagedata, estates }) => {
       transition={{ staggerChildren: 0.6 }}
       px='6'
       py='16'
-      maxW='6xl'
+      maxW='5xl'
       mx='auto'>
       <VStack as={motion.div} align='center' px='4'>
         <Box as={motion.div} variants={animSvg} pos='relative' w='56' h='56'>
@@ -107,11 +108,8 @@ const BuyAHome = ({ pagedata, estates }) => {
           </Box>
         ))}
 
-      <Box
-        pos='relative'
+      <SimpleGrid columns={[1, 1, 2]} spacing='40px'
         mt='20'
-        // columns={[1]}
-        // spacing='40px'
       >
         {estates &&
           estates.map((estate) => (
@@ -125,27 +123,7 @@ const BuyAHome = ({ pagedata, estates }) => {
               description={estate.fields.description}
             />
           ))}
-      </Box>
-
-      <Box
-        display={{ base: "none", lg: "block" }}
-        w='300px'
-        py='6'
-        px='4'
-        pos='absolute'
-        top='550px'
-        right={[20, 20, 20, 20, 32, 72]}
-        rounded='lg'
-        shadow='dark-lg'>
-        <Text fontWeight='semibold' fontSize='lg'>
-          Contact us for more Info
-        </Text>
-        <HStack mt='4' spacing='6'>
-          <EmailBtn />
-          <WhatsAppBtn />
-          <CallBtn />
-        </HStack>
-      </Box>
+      </SimpleGrid>
     </Box>
   );
 };

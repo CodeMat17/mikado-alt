@@ -1,17 +1,24 @@
 import { IconButton } from "@chakra-ui/react";
 import { BsWhatsapp } from "react-icons/bs";
 
-const WhatsAppBtn = () => {
+const WhatsAppBtn = ({ whatsapp }) => {
+ 
   return (
-    <IconButton
-      as='a'
-      href='https://wa.me/+2348037024572'
-      target='_blank'
-      color='green'
-      size='lg'
-      isRound
-      icon={<BsWhatsapp size={25} />}
-    />
+    <>
+      {whatsapp &&
+        whatsapp.map((item, index) => (
+          <IconButton
+            key={index}
+            as='a'
+            href={`https://wa.me/${item.number}`}
+            target='_blank'
+            color='green'
+            size='lg'
+            isRound
+            icon={<BsWhatsapp size={25} />}
+          />
+        ))}
+    </>
   );
 };
 

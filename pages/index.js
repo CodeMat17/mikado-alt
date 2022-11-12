@@ -1,37 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
-import BuyAHome from "../components/BuyAHome";
-import SellAHome from '../components/SellAHome'
-import HouseListing from "../components/HouseListing";
 import NewsLetter from "../components/NewsLetter";
+import Options from "../components/Options";
 import SliderWrapper from "../components/SliderWrapper";
 import { client } from "../datalayer/contentfulClient";
 
-
-export default function Home({ data }) {
-
-
-  const slides = [
-    {
-      url: "/sliders/slider1.webp",
-    },
-    {
-      url: "/sliders/slider2.webp",
-    },
-    {
-      url: "/sliders/slider3.webp",
-    },
-    {
-      url: "/sliders/slider4.webp",
-    },
-    {
-      url: "/sliders/slider5.webp",
-    },
-    {
-      url: "/sliders/slider6.webp",
-    },
-  ];
-
+export default function Home({ data, cardDetails, slides }) {
+  
   return (
     <div>
       <Head>
@@ -52,18 +27,7 @@ export default function Home({ data }) {
                 title={item.fields.sliderTitle}
                 label={item.fields.sliderLabel}
               />
-              <BuyAHome
-                title={item.fields.buyHomeTitle}
-                label={item.fields.buyHomeLabel}
-              />
-              <SellAHome
-                title={item.fields.sellHomeTitle}
-                label={item.fields.sellHomeLabel}
-              />
-              <HouseListing
-                title={item.fields.houseListingTitle}
-                label={item.fields.houseListingLabel}
-              />
+              <Options cardDetails={cardDetails} />
               <NewsLetter
                 title={item.fields.newsLetterTitle}
                 label={item.fields.newsLetterLabel}
@@ -71,7 +35,6 @@ export default function Home({ data }) {
               />
             </Box>
           ))}
-      
       </main>
     </div>
   );
@@ -84,7 +47,51 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data: data.items,
+      data: data.items,     
+      cardDetails: [
+        {
+          id: 1,
+          title: "WANT TO BUY A HOME?",
+          subTitle: "DON'T GET LEFT BEHIND",
+          image: "/svg/home.svg",
+          url: "/buy-a-home",
+        },
+        {
+          id: 2,
+          title: "WANT TO SELL A HOME?",
+          subTitle: "WAIT NO MORE!",
+          image: "/svg/sell.svg",
+          url: "/sell-a-home",
+        },
+        {
+          id: 3,
+          title: "HOME LISTING?",
+          subTitle: "YOU ARE AT THE RIGHT PLACE",
+          image: "/svg/listing.svg",
+          url: "/house-listing",
+        },
+      ],
+
+      slides: [
+        {
+          url: "/sliders/slider1.webp",
+        },
+        {
+          url: "/sliders/slider2.webp",
+        },
+        {
+          url: "/sliders/slider3.webp",
+        },
+        {
+          url: "/sliders/slider4.webp",
+        },
+        {
+          url: "/sliders/slider5.webp",
+        },
+        {
+          url: "/sliders/slider6.webp",
+        },
+      ],
     },
   };
 };

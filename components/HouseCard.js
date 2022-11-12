@@ -24,14 +24,14 @@ const HouseCard = ({ id, name, slug, location, description, coverimage }) => {
             // mx={['auto']}
             // key={house.id}
             flexDir={["column", "row", "row"]}>
-            <Box pos='relative' w='100%' rounded='md' overflow='hidden'>
-              <AspectRatio ratio={16 / 9}>
+            <Box pos='relative' w='100%' maxH='300px' rounded='md' overflow='hidden'>
+              <AspectRatio ratio={1}>
                 <Image
                   src={"https:" + coverimage}
                   alt='house'
                   priority
                   layout='fill'
-                  objectFit='contain'
+                  objectFit='cover'
                 />
               </AspectRatio>
             </Box>
@@ -39,10 +39,10 @@ const HouseCard = ({ id, name, slug, location, description, coverimage }) => {
               <Text fontSize='lg' fontWeight='semibold'>
                 {name}
               </Text>
-              <Text fontSize='sm' fontWeight='semibold'>
+              <Text fontSize='sm' fontWeight='semibold' noOfLines='1'>
                 {location}
               </Text>
-              <Box fontSize='sm' mt='2' noOfLines={[2, 2, 3, 4]} maxW='lg'>
+              <Box fontSize='sm' mt='2' noOfLines={[2, 4, 2, 3, 4]} maxW='lg'>
                 {documentToReactComponents(description, options)}
               </Box>
             </Box>

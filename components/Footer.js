@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import { client } from "../datalayer/contentfulClient";
+import useContentfulLinks from "../datalayer/useContentfulLinks";
 import CallBtn from "./contactBtn/CallBtn";
 import EmailBtn from "./contactBtn/EmailBtn";
 import FacebookBtn from "./contactBtn/FacebookBtn";
@@ -22,6 +22,39 @@ import LogoComponent from "./LogoComponent";
 
 const Footer = () => {
   const color = useColorModeValue("gray.200", "gray.200");
+
+  const [callNo, setCallNo] = useState(null);
+  const [whatsapp, setWhatsapp] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [fb, setFb] = useState(null);
+  const [ig, setIg] = useState(null);
+   const [tw, setTw] = useState(null);
+
+  const { getCallNo, getWhatsAppNo, getEmail, getFb, getIg, getTw } = useContentfulLinks();
+
+  useEffect(() => {
+    getCallNo().then((res) => setCallNo(res));
+  }, []);
+
+  useEffect(() => {
+    getWhatsAppNo().then((res) => setWhatsapp(res));
+  }, []);
+
+  useEffect(() => {
+    getEmail().then((res) => setEmail(res));
+  }, []);
+
+  useEffect(() => {
+    getFb().then((res) => setFb(res));
+  }, []);
+
+   useEffect(() => {
+     getIg().then((res) => setIg(res));
+   }, []);
+  
+   useEffect(() => {
+     getTw().then((res) => setTw(res));
+   }, []);
 
   return (
     <Box px='6' py='12' bg='gray.900' color={color}>
@@ -46,10 +79,9 @@ const Footer = () => {
               Follow Us
             </Text>
             <HStack spacing='4'>
-              <FacebookBtn />
-
-              <InstagramBtn />
-              <TwitterBtn />
+              <FacebookBtn fb={fb} />
+              <InstagramBtn ig={ig} />
+              <TwitterBtn tw={tw} />
             </HStack>
           </VStack>
 
@@ -58,9 +90,9 @@ const Footer = () => {
               Contact Us
             </Text>
             <HStack spacing='4'>
-              <EmailBtn />
-              <WhatsAppBtn />
-              <CallBtn />
+              <EmailBtn email={email} />
+              <WhatsAppBtn whatsapp={whatsapp} />
+              <CallBtn callNo={callNo} />
             </HStack>
           </VStack>
 

@@ -1,17 +1,23 @@
 import { IconButton } from "@chakra-ui/react";
 import { GrFacebookOption } from "react-icons/gr";
 
-const FacebookBtn = () => {
+const FacebookBtn = ({ fb }) => {
   return (
-    <IconButton
-      as='a'
-      href='https://web.facebook.com/people/Mikado-Shelters/100077538831363/'
-      target='_blank'
-      color='facebook.500'
-      size='lg'
-      icon={<GrFacebookOption size={25} />}
-      isRound
-    />
+    <>
+      {fb &&
+        fb.map((item, index) => (
+          <IconButton
+            key={index}
+            as='a'
+            href={item.url}
+            target='_blank'
+            color='facebook.500'
+            size='lg'
+            icon={<GrFacebookOption size={25} />}
+            isRound
+          />
+        ))}
+    </>
   );
 };
 
