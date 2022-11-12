@@ -1,21 +1,16 @@
 import { IconButton } from "@chakra-ui/react";
 import { BsTwitter } from "react-icons/bs";
-const TwitterBtn = ({tw}) => {
+const TwitterBtn = () => {
   return (
-    <>
-    {tw.map((item, index) => (
-       <IconButton key={index}
+    <IconButton
       as='a'
-      href={item.url}
+      href='https://twitter.com/MikadoShelter?t=Hnz5glBn2EE0lJV6puGlSg&s=08'
       target='_blank'
       size='lg'
       color='blue.400'
       icon={<BsTwitter size={25} />}
       isRound
     />
-    ))}
-    </>
-   
   );
 };
 

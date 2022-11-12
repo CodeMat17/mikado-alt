@@ -1,21 +1,16 @@
 import { IconButton } from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 
-const InstagramBtn = ({ ig }) => {
+const InstagramBtn = () => {
   return (
-    <>
-      {ig.map((item, index) => (
-        <IconButton
-          key={index}
-          as='a'
-          href={item.url}
-          target='_blank'
-          size='lg'
-          icon={<BsInstagram size={25} color='red' />}
-          isRound
-        />
-      ))}
-    </>
+    <IconButton
+      as='a'
+      href='https://www.instagram.com/mikadoshelters/?utm_medium=copy_link'
+      target='_blank'
+      size='lg'
+      icon={<BsInstagram size={25} color='red' />}
+      isRound
+    />
   );
 };
 

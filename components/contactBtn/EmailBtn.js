@@ -1,21 +1,16 @@
 import { IconButton } from "@chakra-ui/react";
 import { BiMailSend } from "react-icons/bi";
 
-const EmailBtn = ({ email }) => {
+const EmailBtn = () => {
   return (
-    <>
-      {email.map((item, index) => (
-        <IconButton
-          key={index}
-          as='a'
-          href={`mailto:${item.email}`}
-          color='pink.500'
-          size='lg'
-          isRound
-          icon={<BiMailSend size={25} />}
-        />
-      ))}
-    </>
+    <IconButton
+      as='a'
+      href='mailto:mikadobackend@gmail.com'
+      color='pink.500'
+      size='lg'
+      isRound
+      icon={<BiMailSend size={25} />}
+    />
   );
 };
 
