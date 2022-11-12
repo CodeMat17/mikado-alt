@@ -30,7 +30,7 @@ const SliderWrapper = ({ slides, title, label }) => {
 
   const currentSlide = useCallback((slideIndex) => {
     setCurrentIndex(slideIndex);
-  }, [slideIndex]) 
+  }, []) 
 
   const autoScroll = true;
   let intervalTime = 5000;
