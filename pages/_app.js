@@ -6,11 +6,9 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import NavHeader from "../components/NavHeader";
 import PageLoader from "../components/PageLoader";
-import { client } from "../datalayer/contentfulClient";
 import theme from "../theme";
 
-
-function MyApp({ Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   Router.events.on("routeChangeStart", () => setLoading(true));
@@ -32,5 +30,4 @@ function MyApp({ Component, pageProps}) {
 }
 
 export default MyApp;
-
 
