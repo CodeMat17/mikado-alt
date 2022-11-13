@@ -20,6 +20,10 @@ export default function Home({ data, cardDetails, slides }) {
           content="Located in the beautiful heart of Abuja, our mission is to be the number one real estate developer in Sub-Saharan Africa by creating eco-friendly luxury apartments and residential real estate in harmony with our client's tastes. We are setting the pace by building single-family homes and other housing units in accordance with thoroughly researched, aesthetically pleasing customer experiences from brick to ground up, we are setting the pace. Our estates are environmentally sustainable and provide for the well being and safety of the residents."
         />
         <meta
+          name='google-site-verification'
+          content='FHFZ7Z_-FMwqU2kVHfKI5FTdyCIF2-PQGIDUjdXtpN0'
+        />
+        <meta
           property='og:url'
           content='https://www.mikadoshelters.com/who-we-are'
         />
