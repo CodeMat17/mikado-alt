@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mikadoshelters.com
+
+# Sitemaps
+Sitemap: https://mikadoshelters.com/sitemap.xml

@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import EstateDescriptionModal from "../../components/EstateDescriptionModal";
 import { client } from "../../datalayer/contentfulClient";
+import PageLoader from '../../components/PageLoader'
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries({
@@ -22,7 +23,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -32,14 +33,26 @@ export const getStaticProps = async ({ params }) => {
     "fields.slug": params.slug,
   });
 
+  if (!res) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      }
+    }
+  }
+
   return {
     props: {
       estate: res.items[0],
     },
+    revalidate: 5,
   };
 };
 
 const Details = ({ estate }) => {
+if (!estate) return <PageLoader />
+
   const router = useRouter();
   const { name, location, description, images } = estate.fields;
  
