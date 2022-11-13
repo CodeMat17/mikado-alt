@@ -5,13 +5,13 @@ import {
   Heading,
   HStack,
   SimpleGrid,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import EstateDescriptionModal from "../../components/EstateDescriptionModal";
+import PageLoader from '../../components/PageLoader';
 import { client } from "../../datalayer/contentfulClient";
-import PageLoader from '../../components/PageLoader'
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries({
@@ -51,7 +51,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Details = ({ estate }) => {
-if (!estate) return <PageLoader />
+// if (!estate) return <PageLoader />
 
   const router = useRouter();
   const { name, location, description, images } = estate.fields;
