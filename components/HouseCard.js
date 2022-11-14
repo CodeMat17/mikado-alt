@@ -36,13 +36,13 @@ const HouseCard = ({ id, name, slug, location, description, coverimage }) => {
               </AspectRatio>
             </Box>
             <Box pb={[2, 2, 4]} pt={[1]} px={[2, 2, 4]}>
-              <Text fontSize='lg' fontWeight='semibold'>
+              <Text fontSize='xl' fontWeight='semibold'>
                 {name}
               </Text>
-              <Text fontSize='sm' fontWeight='semibold' noOfLines='1'>
+              <Text fontSize='lg' fontWeight='semibold' noOfLines='1'>
                 {location}
               </Text>
-              <Box fontSize='sm' mt='2' noOfLines={[2, 4, 2, 3, 4]} maxW='lg'>
+              <Box fontSize='lg' mt='2' noOfLines={[2, 4, 2, 3, 4]} maxW='lg'>
                 {documentToReactComponents(description, options)}
               </Box>
             </Box>
