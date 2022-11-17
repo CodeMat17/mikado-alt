@@ -1,20 +1,25 @@
 import {
   Box,
+  Button,
+  chakra,
+  Flex,
+  FormControl,
   Heading,
+  HStack,
   Input,
-  InputGroup,
-  InputRightAddon,
   Text,
   useColorModeValue,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
-const NewsLetter = ({title, label, desc}) => {
+const NewsLetter = ({ title, label, desc }) => {
+  const toast = useToast();
   const color = useColorModeValue("white", "");
-
-  const handleSubscribe = () => {};
 
   const animSvg = {
     hidden: { x: -100, opacity: 0 },
@@ -55,6 +60,44 @@ const NewsLetter = ({title, label, desc}) => {
     },
   };
 
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  const subscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMsg("");
+
+    try {
+      const response = await axios.post("/api/subscribe", {
+        email,
+        firstName,
+        lastName,
+        phone,
+      });
+      toast({
+        title: "DONE!!!",
+        description:
+          "You have successfully subscribed for our newsletter. Kudos!",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+        position: 'top',
+      });
+      setEmail("");
+      setFirstName("");
+      setLastName("");
+      setPhone("");
+    } catch (e) {
+      setErrorMsg(e.response.data.error);
+    }
+    setLoading(false);
+  };
+
   return (
     <Box px='6' pt='20' pb='20' maxW='2xl' mx='auto'>
       <VStack
@@ -79,10 +122,10 @@ const NewsLetter = ({title, label, desc}) => {
           letterSpacing='1px'
           fontWeight='semibold'
           fontSize='lg'>
-  {label}
+          {label}
         </Text>
         <Heading as={motion.div} variants={animBigText} textAlign='center'>
-        {title}
+          {title}
         </Heading>
         <Text
           as={motion.div}
@@ -90,22 +133,94 @@ const NewsLetter = ({title, label, desc}) => {
           textAlign='center'
           maxW='md'
           mx='auto'>
-       {desc}
+          {desc}
         </Text>
       </VStack>
 
-      <InputGroup mt='6' maxW='md' mx='auto'>
-        <Input py='6' placeholder='Enter your email' />
+      <Box mt='8' maxW='md' mx='auto'>
+        {errorMsg && (
+          <Box p='4' mb='4' bg='red.100' color='red.500' rounded='lg'>
+            <Text fontWeight='semibold' fontSize='lg' textAlign='center'>
+              Something went wrong!
+            </Text>
+            <Text>{errorMsg}</Text>
+          </Box>
+        )}
+        <chakra.form onSubmit={subscribe}>
+          <Flex flexDir={["column", "row"]}>
+            <FormControl isRequired={true}>
+              <Input
+                type='text'
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                py='6'
+                placeholder='Enter your first name'
+              />
+            </FormControl>
+            <FormControl mt={[4, 0]} ml={[0, 4]} isRequired={true}>
+              <Input
+                type='text'
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                py='6'
+                placeholder='Enter your last name'
+              />
+            </FormControl>
+          </Flex>
+          <FormControl mt={[4]} isRequired={true}>
+            <Input
+              type='tel'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              py='6'
+              placeholder='Enter your phone number'
+            />
+          </FormControl>
+          <FormControl mt={[4]} isRequired={true}>
+            <Input
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              py='6'
+              placeholder='Enter your email'
+            />
+          </FormControl>
+          <HStack mt='4'>
+            <Button
+              type='submit'
+              disabled={loading}
+              isLoading={loading}
+              // onClick={subscribe}
+              size='lg'
+              w='full'
+              bg='gray.700'
+              color={color}>
+              SUBSCRIBE
+            </Button>
+          </HStack>
+        </chakra.form>
+      </Box>
+
+      {/* <InputGroup mt='6' maxW='md' mx='auto'>
+        <Input
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          py='6'
+          placeholder='Enter your email'
+        />
         <InputRightAddon
           py='6'
           as='button'
-          onClick={handleSubscribe}
+          disabled={loading}
+          loading={loading}
+          onClick={subscribe}
           // children='Subscribe'
           bg='gray.700'
           color={color}>
           Subscribe
         </InputRightAddon>
-      </InputGroup>
+      </InputGroup> */}
     </Box>
   );
 };
