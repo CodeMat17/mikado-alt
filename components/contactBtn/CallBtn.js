@@ -5,7 +5,7 @@ const CallBtn = () => {
   return (
     <IconButton
       as='a'
-      href='tel:+2348037024572'
+      href='tel:+2348056666949'
       color='orange'
       size='lg'
       isRound

@@ -5,7 +5,7 @@ const EmailBtn = () => {
   return (
     <IconButton
       as='a'
-      href='mailto:mikadobackend@gmail.com'
+      href='mailto:mikadoshelters@gmail.com'
       color='pink.500'
       size='lg'
       isRound

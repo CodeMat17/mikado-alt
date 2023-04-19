@@ -92,7 +92,7 @@ const ContactUs = ({ url }) => {
           <Text fontWeight='bold' fontSize='2xl' letterSpacing='1px'>
             eMail Address:
           </Text>
-          <Text>xxxxxxxxxxxxxxxxx</Text>
+          <Text>mikadoshelters@gmail.com</Text>
         </VStack>
 
         <Box rounded='md' overflow='hidden' mt='12'>
