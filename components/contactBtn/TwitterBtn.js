@@ -4,7 +4,7 @@ const TwitterBtn = () => {
   return (
     <IconButton
       as='a'
-      href='https://twitter.com/MikadoShelter?t=Hnz5glBn2EE0lJV6puGlSg&s=08'
+      href='https://twitter.com/MikadoShel79324?t=t-hIwJZ8KaPnNmcedoAXIw&s=09'
       target='_blank'
       size='lg'
       color='blue.400'

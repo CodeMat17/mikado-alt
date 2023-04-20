@@ -4,7 +4,7 @@ import Image from "next/image";
 const ManagementTeamCard = ({ name, position, image }) => {
   return (
     <Box mx='auto'>
-        <Box shadow='md' rounded='full' overflow='hidden' w={['220px']} h='220px'>
+        <Box shadow='md' rounded='full' overflow='hidden' w={['200px']} h='200px' mx='auto'>
           <AspectRatio ratio={1 / 1}>
             <Image
               alt='image'
@@ -16,9 +16,9 @@ const ManagementTeamCard = ({ name, position, image }) => {
           </AspectRatio>
         </Box>
     
-      <VStack pt='4' spacing='0' fontSize='sm'>
-        <Text>{name}</Text>
-        <Text>{position}</Text>
+      <VStack textAlign='center' pt='4' spacing='0' fontSize='sm'>
+        <Text >{name}</Text>
+        <Text >{position}</Text>
       </VStack>
     </Box>
   );

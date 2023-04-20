@@ -5,7 +5,7 @@ const InstagramBtn = () => {
   return (
     <IconButton
       as='a'
-      href='https://www.instagram.com/mikadoshelters/?utm_medium=copy_link'
+      href='https://www.instagram.com/invites/contact/?i=u3qvyhl4trxr&utm_content=qxxoqyy'
       target='_blank'
       size='lg'
       icon={<BsInstagram size={25} color='red' />}

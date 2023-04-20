@@ -15,6 +15,18 @@ const mngt = [
     position: "LEGAL REPRESENTATIVE",
     name: "UJUNWA LEATICIA O.",
   },
+  {
+    id: 3,
+    image: "/mngt/rodd.webp",
+    position: "BUSINESS CONSULTANT/PARTNER, ATLANTA. GA, USA",
+    name: "ROZ DODD",
+  },
+  {
+    id: 4,
+    image: "/mngt/jeff.webp",
+    position: "ICT PERSONNEL",
+    name: "JEFF OSAMU",
+  },
 ];
 
 const ManagementTeam = () => {
@@ -79,7 +91,7 @@ const ManagementTeam = () => {
       <Box px='6' py='16' maxW='6xl' mx='auto'>
         <Heading textAlign='center'>OUR MANAGEMENT TEAM</Heading>
 
-        <SimpleGrid pt='16' pb='8' columns={[1, 1, 2, 3]} spacing='40px'>
+        <SimpleGrid pt='16' pb='8' columns={[1, 1, 2, 3, 4]} spacing='40px'>
           {mngt.map((team) => (
             <ManagementTeamCard key={team.id} {...team} />
           ))}
