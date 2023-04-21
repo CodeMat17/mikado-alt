@@ -13,7 +13,7 @@ const mngt = [
     id: 2,
     image: "/mngt/legal.webp",
     position: "LEGAL REPRESENTATIVE",
-    name: "UJUNWA LEATICIA O.",
+    name: "BARR. UJUNWA LEATICIA O.",
   },
   {
     id: 3,
