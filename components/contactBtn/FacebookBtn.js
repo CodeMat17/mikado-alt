@@ -5,7 +5,7 @@ const FacebookBtn = () => {
   return (
     <IconButton
       as='a'
-      href='https://web.facebook.com/people/Mikado-Shelters/100077538831363/'
+      href='https://www.facebook.com/profile.php?id=100091680201411/'
       target='_blank'
       color='facebook.500'
       size='lg'
