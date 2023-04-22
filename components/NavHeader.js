@@ -23,7 +23,7 @@ const NavHeader = () => {
           <LogoComponent />
           <VStack spacing='-2' align='start' fontSize='lg' fontWeight='semibold'>
             <Text>MIKADO</Text>
-            <Text>SHELTERS</Text>
+            <Text>SHELTERS LTD</Text>
           </VStack>
         </HStack>
 
