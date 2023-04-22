@@ -101,16 +101,9 @@ const Footer = () => {
         </SimpleGrid>
         <Divider my='8' />
         <Text>&copy; 2022 Mikado Shelters Ltd. All rights reserved.</Text>
-        <Text color='gray'>
-          {" "}
-          Developed by{" "}
-          <Link
-            color='blue.500'
-            isExternal
-            href='https://www.soft-lutions.com.ng'>
-            CodeMat Soft-lutions.
-          </Link>
-        </Text>
+        {/* <Text color='gray'>
+          Developed by Mikado Tech.        
+        </Text> */}
       </Box>
     </Box>
   );
